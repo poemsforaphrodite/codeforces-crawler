@@ -1,8 +1,10 @@
 import json
+import os
 from apify_client import ApifyClient
 
 # Initialize the ApifyClient with your API token
-client = ApifyClient("apify_api_YIdcCj4RBwUSEJfohmQo95dENLkUiJ3NzqTh")
+my_secret = os.environ['APIFY_API_KEY']
+client = ApifyClient(my_secret)
 
 # Read start URLs from url.txt file
 with open('url.txt', 'r') as file:
